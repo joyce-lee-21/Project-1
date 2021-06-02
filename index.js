@@ -21,10 +21,12 @@ const getAddresses = () => {
 
 const getAddressInfo = (data) => {
     console.log(data)
+    let li = document.createElement('li')
+    li.innerText = data.name
+    document.querySelector('ul').append(li)
+    // [listPLACEHOLDER].addEventListener('click', () => {
 
-    [listPLACEHOLDER].addEventListener('click', () => {
-
-    })
+    // })
 }
 
 // const selectAddress = (desc) => {
