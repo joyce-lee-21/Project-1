@@ -19,8 +19,6 @@ const getAddressInfo = (data) => {
     // console.log(data)
     let li = document.createElement('li')
     li.innerText = data.name
-    li.style.color = "#fffff4"
-    li.style.color = "#fffff4"
 
     document.querySelector('ul').append(li)
 
@@ -30,7 +28,9 @@ const getAddressInfo = (data) => {
 }
 
 const selectAddress = (e, data) => {
-    // console.log(data)
+    console.log(e)
+    document.querySelector('.embedded-map').innerHTML = ""
+    e.target.style.color = "#BDCC94"
     const mapArea = document.querySelector('div#map-content')
 
     const addressName = document.querySelector('h2.home-name')
@@ -56,12 +56,10 @@ const selectAddress = (e, data) => {
 
     // “As a user, I want click this "map it" button so that the embedded map locates the home.”
     addressMapIt.addEventListener('click', () => {
-        console.log(data.address)
+        // console.log(data.address)
 
         const destination = data.address
-        const embeddedMap = document.createElement('div')
-        embeddedMap.className = "embedded-map"
-
+        const embeddedMap = document.querySelector('div.embedded-map')
         const addressMap = document.createElement('iframe')
 
         addressMap.className = "home-map"
@@ -72,7 +70,6 @@ const selectAddress = (e, data) => {
         addressMap.allowfullscreen = true
         addressMap.src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${destination}`
         // `https://www.google.com/maps/embed/v1/directions?key=${API_KEY}&origin=${origin}&destination=${destination}`
-
 
         mapArea.append(embeddedMap)
         embeddedMap.append(addressMap)
@@ -96,6 +93,3 @@ const selectAddress = (e, data) => {
         })
     })
 }
-
-
-
