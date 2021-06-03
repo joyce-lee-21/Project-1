@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyCyKMXUad_LOaxvAirtrIayiSYALdq2x6I"
+const API_KEY = 'AIzaSyBq5y1z9X29j1L_AV05_VrSaz1WDablRRQ'
 
 document.addEventListener("DOMContentLoaded", () => {
     getAddresses()
@@ -19,8 +19,6 @@ const getAddressInfo = (data) => {
     // console.log(data)
     let li = document.createElement('li')
     li.innerText = data.name
-    li.style.color = "#fffff4"
-    li.style.color = "#fffff4"
 
     document.querySelector('ul').append(li)
 
@@ -32,6 +30,8 @@ const getAddressInfo = (data) => {
 const selectAddress = (e, data) => {
     // console.log(data)
     const mapArea = document.querySelector('div#map-content')
+    document.querySelector('.embedded-map').innerHTML = ""
+    e.target.style.color = "#BDCC94"
 
     const addressName = document.querySelector('h2.home-name')
     // addressName.className = "home-name"
@@ -85,16 +85,32 @@ const selectAddress = (e, data) => {
         addressInput.className = 'address-input'
         addressInput.placeholder = "Starting Point"
         addressSubmit.className = 'address-submit'
-        addressSubmit.setAttribute("type", "button")
+        addressSubmit.setAttribute("type", "submit")
         addressSubmit.value = "Get Directions"
 
         embeddedMap.append(addressForm)
         addressForm.append(addressInput, addressSubmit)
 
         // “As a user, I want input my current location so that I can get a route to the selected home.”
-        addressSubmit.addEventListener('click', () => {
+        document.querySelector('.address-form').addEventListener('submit', (e) => {      
+        e.preventDefault()
+        console.log(e)
+
+        const mapFrom = document.createElement('iframe') 
+
+        mapFrom.className = "origin-map"
+        mapFrom.width= "500"
+        mapFrom.height="350"
+        mapFrom.frameborder="0" 
+        mapFrom.style = "border: 0; padding-top: 50px;"
+        mapFrom.allowfullscreen = true
+        const origin = e.target.childNodes[0].value
+        mapFrom.src =`https://www.google.com/maps/embed/v1/directions?key=${API_KEY}&origin=${origin}&destination=${destination}&mode=${mode}`
+        embeddedMap.append(mapFrom)
         })
     })
+    
+
 }
 
 
