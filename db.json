@@ -1,0 +1,34 @@
+{
+    "addresses": [
+        {
+            "id": 1,
+            "name": "Family Guy",
+            "image": "https://vignette.wikia.nocookie.net/familyguyfanon/images/3/3c/The_Griffin_House.png/revision/latest?cb=20180405011745",
+            "address": "31 Spooner Street Quahog, RI"
+        },
+        {
+            "id": 2,
+            "name": "Friends",
+            "image": "https://s3-media0.fl.yelpcdn.com/bphoto/oty1woDwsWEWZC7iOWBRPw/l.jpg",
+            "address": "90 Bedford Sreet New York, NY"
+        },
+        {
+            "id": 3,
+            "name": "Fresh Prince",
+            "image": "https://luxurylaunches.com/wp-content/uploads/2020/09/Will-Smith-Mansion-Airbnb.jpg",
+            "address": "251 North Bristol, Los Angeles, CA"
+        },
+        {
+            "id": 4,
+            "name": "Brady Bunch",
+            "image": "https://th.bing.com/th/id/R7cdfe6decf399085cb93f53a7bcb3d92?rik=BKv88cfi%2bwBVqg&pid=ImgRaw",
+            "address": "11222 Dilling Street, Studio City, CA"
+        },
+        {
+            "id": 5,
+            "name": "Iron Man",
+            "image": "https://th.bing.com/th/id/Ra368469c443dfd589ce3b6a497026586?rik=JkqpZwIu5Krozg&pid=ImgRaw",
+            "address": "10880 Malibu Point, Malibu, CA"
+        }
+    ]
+}
