@@ -20,32 +20,54 @@ const getAddresses = () => {
 //“As a user, I want click on a home from the list so that the information (address, picture, name) shows up.”
 
 const getAddressInfo = (data) => {
-    console.log(data)
+    // console.log(data)
+
     let li = document.createElement('li')
     li.innerText = data.name
-    document.querySelector('ul').append(li)
-    // [listPLACEHOLDER].addEventListener('click', () => {
 
-    // })
+    document.querySelector('ul').append(li)
+
+    li.addEventListener('click', (e) => {
+        selectAddress(e, data)
+    })
 }
 
-// const selectAddress = (desc) => {
-//     fetch('url',{
-//       //  method: "GET"
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ description: desc })
-//     })
-        // const addressName = document.querySelector('h2')
-        // addressName.innerText = data.name
+const selectAddress = (e, data) => {
+    console.log(data)
+    // fetch('url',{
 
-        // const addressImg = document.querySelector('img')
-        // addressImg.src = data.image
+    //   //  method: "GET"
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ description: desc })
+    // })
+    const mapArea = document.querySelector('div#map-content')
 
-        // const addressDesc = document.querySelector('h3')
-        // addressDesc.innerText = data.address
-// }
+    const addressName = document.querySelector('h2.home-name')
+    // addressName.className = "home-name"
+    addressName.innerText = ""
+    addressName.innerText = data.name
+
+    const addressDesc = document.querySelector('h3.home-address')
+    // addressDesc.className = "home-address"
+    addressDesc.innerText = ""
+    addressDesc.innerText = data.address
+
+
+    const addressImg = document.querySelector('img.home-img')
+    // addressImg.className = "home-img"
+    addressImg.src = ""
+    addressImg.src = data.image
+
+    mapArea.append(addressName, addressDesc, addressImg)
+
+
+}
+
+const placeMap = () => {
+
+}
 
 // const setUpListeners = () => {
 //     const ...form = document.querySelector('...')
