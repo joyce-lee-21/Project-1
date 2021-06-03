@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyBq5y1z9X29j1L_AV05_VrSaz1WDablRRQ'
+const API_KEY = 'AIzaSyCyKMXUad_LOaxvAirtrIayiSYALdq2x6I'
 
 document.addEventListener("DOMContentLoaded", () => {
     getAddresses()
@@ -28,25 +28,27 @@ const getAddressInfo = (data) => {
 }
 
 const selectAddress = (e, data) => {
-    console.log(e)
-    document.querySelector('.embedded-map').innerHTML = ""
-    e.target.style.color = "#BDCC94"
+    // console.log(e)
     const mapArea = document.querySelector('div#map-content')
-    document.querySelector('.embedded-map').innerHTML = ""
+
+    document.querySelector('div.embedded-map').innerHTML = ""
+    if (document.querySelector('.google-map') != 'undefined' && document.querySelector('.google-map') != null) {
+        document.getElementsByTagName('button')[0].remove()
+    } else {
+
+    }
+
     e.target.style.color = "#BDCC94"
 
     const addressName = document.querySelector('h2.home-name')
-    // addressName.className = "home-name"
     addressName.innerText = ""
     addressName.innerText = data.name
 
     const addressDesc = document.querySelector('h3.home-address')
-    // addressDesc.className = "home-address"
     addressDesc.innerText = ""
     addressDesc.innerText = data.address
 
     const addressImg = document.querySelector('img.home-img')
-    // addressImg.className = "home-img"
     addressImg.src = ""
     addressImg.src = data.image
 
@@ -71,7 +73,6 @@ const selectAddress = (e, data) => {
         addressMap.style = "border: 0; padding-top: 50px;"
         addressMap.allowfullscreen = true
         addressMap.src = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${destination}`
-        // `https://www.google.com/maps/embed/v1/directions?key=${API_KEY}&origin=${origin}&destination=${destination}`
 
         mapArea.append(embeddedMap)
         embeddedMap.append(addressMap)
