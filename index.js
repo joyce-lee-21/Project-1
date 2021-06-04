@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyCyKMXUad_LOaxvAirtrIayiSYALdq2x6I'
+const API_KEY = ''
 
 document.addEventListener("DOMContentLoaded", () => {
     getAddresses()
@@ -30,10 +30,11 @@ const getAddressInfo = (data) => {
 
     // document.querySelector('ul').addEventListener('mouseover', (e) => {
     //     e.target.style.backgroundColor = "#BDCC94"
-    //     setTimeout(() => {e.target.style.backgroundColor = ""}, 1000)
+    //     setTimeout(() => {e.target.style.backgroundColor = ""}, 700)
     // })
 }
 
+//“As a user, I want input a new home and add it to the list so that the information (address, picture, name) shows up.”
 const addHome = () => {
     if (document.querySelector('.home-form') != 'undefined' && document.querySelector('.home-form') != null) {
         document.querySelector('.home-form').remove()
