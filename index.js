@@ -113,5 +113,26 @@ const selectAddress = (e, data) => {
 
 }
 
-
-
+const homeForm =() =>{
+    let houseForm = document.createElement('form')
+    let houseInput = document.createElement('input')
+    let houseSubmit = document.createElement('input')
+    houseForm.className = 'house-form'
+    houseInput.className = 'house-input'
+    let nameInput = document.createElement('input')
+    let nameSubmit = document.createElement('input')
+}
+const nameForm =() =>{
+    nmForm.className = 'name-form'
+    nameInput.className = 'name-input'
+    nameSubmit.className = 'name-submit'
+    nameSubmit.setAttribute("type", "submit")
+}
+const imageForm =() =>{
+    let imageInput = document.createElement('input')
+    let imageSubmit = document.createElement('input')
+    imgForm.className = 'name-form'
+    imageInput.className = 'name-input'
+    imageSubmit.className = 'name-submit'
+    imageSubmit.setAttribute("type", "submit")
+}
