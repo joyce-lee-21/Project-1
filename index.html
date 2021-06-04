@@ -8,26 +8,32 @@
   </head>
   <body>
     <div id="static-navbar">
-      <!-- selectable navbar here -->
-      <p>Welcome to our Map App! 
-        <br>
-        We scoured the internet to collect the addresses of your favorite fictional characters' homes. Select a home below to map the location of it, and get directions.
-      </p>
-      <div id="home-selection">
+        <!-- selectable navbar here -->
+        <h3>Welcome to our Map App!</h3>
+            <br>
+            <p>We scoured the internet to collect the addresses of your favorite fictional characters' homes. Select a home below to map the location of it, and get directions.
+            </p>
+            <br>
+    </div>
+    
+    <div id="home-selection">
         <ul id="home-list">
-            <li class="home">Home #1 Selection</li>
         </ul>
-      </div>
     </div>
-
-    <div id="map-content">
+    
+    <div id="map-background">
     <!-- scrollable content here -->
-    <h2>Home Name Goes Here</h1>
-    <h3>Address Goes Here</h2>
-    <img src="" alt="">Image goes here
+        <div id="map-content">
+            <h2 class="home-name"></h1>
+            <h3 class="home-address"></h2>
+            <img src="" alt="" class="home-img">
+            <div class="embedded-map">
+
+            </div>
+        </div>
     </div>
 
-    <script src="src/index.js"></script>
+    <script src="index.js"></script>
     </ul>
   </body>
 </html>
